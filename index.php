@@ -1,28 +1,9 @@
 <?php
 
-class User {
-    private $name;
-    private $surname;
-    private $email;
-    private $password;
+// daje dostęp do klasy
+require_once('Routing.php');
 
-    public function __construct(string $name){
-        $this->name = $name;
-    }
-
-    public function getName(): string {
-        return $this->name;
-    }
-
-    public function setname(string $name) : void {
-        $this->name = $name;
-    }
-
-}
-
-$user = new User('antek');
-echo $user->getName();
-
-
+$routing = new Routing();
+$routing->run();
 
 ?>
