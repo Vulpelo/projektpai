@@ -1,6 +1,8 @@
 <?php
 
 require_once('controllers/DefaultController.php');
+require_once('controllers/UploadController.php');
+
 
 class Routing
 {
@@ -16,6 +18,10 @@ class Routing
             'login' => [
                 'controller' => 'DefaultController',
                 'action' => 'login'
+            ],
+            'upload' => [
+                'controller' => 'UploadController',
+                'action' => 'upload'
             ]
         ];
     }

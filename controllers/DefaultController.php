@@ -12,12 +12,13 @@ class DefaultController extends AppController
 
         public function index()
         {
-
+            $name = 'Damian';
+            $this->render('index', ['name'=>$name]);
         }
 
         public function login()
         {
-            // $this->render();
+            $this->render('login');
         }
 }
 

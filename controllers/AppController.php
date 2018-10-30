@@ -21,9 +21,23 @@ class AppController
         return $this->request === 'post';
     }
 
-    public function render(string $fileName = null)
+    public function render(string $fileName = null, $variables =[])
     {
-        $path = $fileName ? dirname(__DIR__).'\views\\'.get_class($this).'\\'.$fileName.'.php' : '';
+        $path = $fileName ? dirname(__DIR__).'/views/'.get_class($this).'/'.$fileName.'.php' : '';
+
+        $output = 'There isn\'t such file to render.';
+
+        if (file_exists($path)) {
+            
+            // wypakowuje tablice asocjacyjną, pierwszy parametr w tablicy jest nową zmienną
+            extract($variables);
+            ob_start();
+
+            include $path;
+
+            $output = ob_get_clean();
+        }
+        print $output;
     }
 }
 
