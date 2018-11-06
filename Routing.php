@@ -2,6 +2,7 @@
 
 require_once('controllers/DefaultController.php');
 require_once('controllers/UploadController.php');
+require_once('controllers/LibraryController.php');
 
 
 class Routing
@@ -22,6 +23,10 @@ class Routing
             'upload' => [
                 'controller' => 'UploadController',
                 'action' => 'upload'
+            ],
+            'library' => [
+                'controller' => 'LibraryController',
+                'action' => 'library'
             ]
         ];
     }

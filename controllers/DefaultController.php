@@ -18,6 +18,9 @@ class DefaultController extends AppController
 
         public function login()
         {
+            if ($this->isPost()) {
+                var_dump($_POST);
+            }
             $this->render('login');
         }
 }
